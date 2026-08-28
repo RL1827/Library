@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-page">
+        <div class="sidebar">
+            <div class="form-button">
+            <button command="show-modal" commandfor="submission" >Book Form</button>
+            </div>
+                <dialog id="submission">
+                    <form id="bookform">
+                        <div class="form">
+                            <div class="form-text">
+                                <label for="author">Author:</label>
+                                <input type="text" id="author" name="author" minlength="1">
+                            </div>
+
+                            <div class="form-text">
+                                <label for="title">Title:</label>
+                                <input type="text" id="title" name="title" minlength="1">
+                            </div>
+
+                            <div class="form-text">
+                                <label for="number-of-pages">Number of pages:</label>
+                                <input type="number" id="number-of-pages" name="number-of-pages">
+                            </div>
+
+                            <div class="form-text">
+                                <p>Have you read it?</p>
+                                <div>
+                                    <label for="not-read">Not Read</label>
+                                    <input type="radio" id="not-read" name="read-status" value="not-read">
+                                </div>
+                                <div>
+                                    <label for="ongoing">Ongoing</label>
+                                    <input type="radio" id="ongoing" name="read-status" value="ongoing">
+                                </div>
+                                <div>
+                                    <label for="read">Read</label>
+                                    <input for="radio" id="read" name="read-status" value="read">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </dialog>
+        </div>
+
+        <div class="display">
+        </div>
+    </div>
+</body>
