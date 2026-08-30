@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 .main-page{
     display:grid;
     grid-template-columns: 1fr 7fr;
@@ -12,16 +15,37 @@
     background-color:rgb(36, 91, 245);
 }
 
+#bookform{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20vh;
+    padding-left: 5vh;
+    padding-top: 5vh;
+}
+
+.form-text{
+    margin: 3vh;
+}
+
+.radio{
+    margin-top: 3vh;
+}
+
 .form-button{
     margin-top: 30px;
 }
 
+.btn{
+    padding-top: 10px;
+    padding-left: auto;
+}
 
 .display{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column: 2 / 3;
-    background-color:rgb(247, 239, 197);
+    background-color:rgb(122, 124, 131);
 }
 
 .card{
