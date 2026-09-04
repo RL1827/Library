@@ -7,12 +7,13 @@
 </head>
 
 <body>
+    <script defer src="javascript.js"></script>
     <div class="main-page">
         <div class="sidebar">
             <div class="form-button">
-            <button command="show-modal" commandfor="submission" >Book Form</button>
+            <button popovertarget="submission" >Book Form</button>
             </div>
-                <dialog id="submission">
+                <dialog id="submission" popover>
                     <form id="bookform">
                         <div class="form">
                             <div class="form-text">
@@ -49,9 +50,9 @@
                             <div class="btn">
                                 <button type="submit">Add Book to Library</button>
                             </div>
-                            
                         </div>
                     </form>
+                    <button popovertarget="submission" popovertargetaction="hide">Close</button>
                 </dialog>
         </div>
 

@@ -43,12 +43,22 @@ body{
 
 .display{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-column: 2 / 3;
     background-color:rgb(122, 124, 131);
+    padding: 10px;
+    gap: 10px;
 }
 
 .card{
     display: flex;
     flex-direction: column;
+}
+
+.cardDiv{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
 }
