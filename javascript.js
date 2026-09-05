@@ -14,6 +14,10 @@ Book.prototype.toString = function(){
     return `${this.author}, {this.title}, ${this.pages}, ${this.status}, ${this.id}`
 }
 
+Book.setStatus = function(status){
+    this.status = status
+}
+
 let listening = document.querySelector("#bookform")
 let authorname = ""
 let titlename = ""
@@ -70,27 +74,44 @@ function createCards(book){
     removeButton = document.createElement("button")
     removeButton.textContent = "Remove Book"
     removeButton.addEventListener("click", (event)=>{
-        parentCard.remove()
-        const index = Library.findIndex(b => b.id === book.id);
-        if (index !== -1) {
-            Library.splice(index, 1);
-            console.log(`✅ Removed: ${book.title}`);
-            console.log(`📚 Library now has ${Library.length} books`);
-        } else {
-            console.log(`❌ Book not found: ${book.title}`);
+        let parent= event.target.parentElement
+        let parentID = parent.getAttribute("id")
+        for (let i = Library.length - 1; i >= 0; i--) {
+            if (Library[i].id === parentID) {
+                Library.splice(i, 1); // Removes 1 element at index i
+            }
         }
-    }
+        parent.remove()
+        }
     )
+    toggleRead = document.createElement("button")
+    toggleRead.textContent = "Toggle Read"
+    toggleRead.addEventListener("click", ()=>{
+        if (book.status === "not-read"){
+            book.status = "ongoing"
+        }else if (book.status === "ongoing"){
+            book.status = "read"
+        } else{
+            book.status = "not-read"
+        }
+        statusText.textContent = `Reading Status: ${book.status}`
+        console.log(book)
+    })
     parentCard.appendChild(titleText)
     parentCard.appendChild(authorText)
     parentCard.appendChild(pageText)
+    parentCard.appendChild(statusText)
     parentCard.appendChild(idText)
     parentCard.appendChild(removeButton)
+    parentCard.appendChild(toggleRead)
+    
 
     parentCard.classList.add("cardDiv")
+    parentCard.setAttribute('id', `${book.id}`)
     titleText.classList.add("cardText")
     authorText.classList.add("cardText")
     pageText.classList.add("cardText")
+    statusText.classList.add("cardText")
     idText.classList.add("cardText")
 
     return parentCard
